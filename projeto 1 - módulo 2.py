@@ -25,7 +25,7 @@ def compat():
     #o resultado no fomato eX_tX_pX_sX vai ser adicionado na lista com 
     #resultados
     cont = 'sim'
-    while cont == 'sim':
+    while cont == 'sim' or (cont == 'Sim') or (cont == 'SIM') or (cont == 's'):
       print('*'*50)
       nome = input('Diga qual o nome do entrevistado:\n')
       print('\n','*'*50) 
@@ -99,6 +99,8 @@ def busca(resultados, E,T,P,S):
           selecionados.remove(i) #remove os espaços em vazios dos usuários que
           # não foram selecionados
     
-    return pd.DataFrame(selecionados, columns=['Candidato', 'Resultado']) #ou
+    return pd.DataFrame(selecionados, columns=['Candidato', 'Notas']) #ou
     #return imprime(selecionados)
 
+#teste:
+#busca([['Matheus', 'e10_t10_p10_s7'], ['Luiz', 'e10_t9_p8_s7'], ['Larissa', 'e9_t8_p7_s6'], ['Barbara', 'e0_t0_p0_s0'], ['Bia', 'e8_t8_p9_s10']], 8,7,8,7)
