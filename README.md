@@ -1,6 +1,6 @@
-**CURSO DE ANÁLISE DE DADOS - SENAC/RESILIA**
+**CURSO DE ANÁLISE DE DADOS - SENAC/RESILIA** <br>
 **Projeto individual 1 - Módulo 2;** <br>
-**Matheus Augusto de Souza.**
+**Matheus Augusto de Souza.** <br>
 e-mail para contato: <br>
 mataugusto1999@gmail.com
 
