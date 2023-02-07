@@ -3,9 +3,11 @@
 #Matheus Augusto de Souza.
 
 
+import pandas as pd
+
 #Função que imprime as listas em linhas
 def imprime(lista):
-  """Função criada para imprimir um valor por linha"""
+  """Função criada para imprimir um indice da lista por linha"""
   for i in lista:
     print(i)
 
@@ -24,11 +26,11 @@ def compat():
     #resultados
     cont = 'sim'
     while cont == 'sim':
-      print('*'*20)
+      print('*'*50)
       nome = input('Diga qual o nome do entrevistado:\n')
-      print('*'*20) 
+      print('\n','*'*50) 
       lista = (input('Diga as notas da seguinte forma:\nEntrevista, Teste Teórico, Teste Prático, SoftSkills\n'))
-      print('*'*20)
+      print('*'*50,'\n')
       dados = [] #lista vazia para adicionar o nome e as notas individuais;
 
       x = lista.split(',') #cria uma lista com as notas dadas pelo entrevistador
@@ -40,32 +42,31 @@ def compat():
       dados.append(nome)  #adiciona o nome na lista de dados individuais 
       dados.append(resultado)  #adiciona as notas no formato 'eX_tX_pX_sX'
       resultados.append(dados)
-      print('*'*20)
+      print('*'*50,)
       cont = input('Deseja continuar?\n(digite sim ou não)\n')
-      print('*'*20)
+      print('*'*50,'\n')
     print(resultados)
-    return imprime(resultados)
-    #return pd.DataFrame(resultados, columns=['Candidato', 'Resultado'])
+    
+    return pd.DataFrame(resultados, columns=['Candidato', 'Resultado'])
     # Podemos usar a função: pd.DataFrame para imprimi uma tabela com as colunas 
     # Candidato e Resultado (após importar a biblioteca pandas)
 
-
+    #return imprime(resultados)
+    #caso não queiramos importar a biblioteca pandas, podemos usar essa função.
   
-    
-    #o usuario vai infromar a nota minima de e, t, p, e s, nossa aplicação deve 
-    #informar quem são os candidatos com nota maior ou igual a essas informadas
-    #pelo usuário.
+
+
 #Função que busca o entrevistado pelas notas minimas.
 def busca(resultados, E,T,P,S):
     '''Função que recebe a lista de resultados e as notas minimas de cada parte 
     do processo seletivo e retorna uma lista com os usuários que correspondem as 
     exigencias. list, int, int, int, int -> '''
-    selecionados = []
+    selecionados = []  #lista com todos os candidatos que foram selecionados
     for entrevistas in resultados:
-      sel = []
+      sel = []  #lista com o selecionado (a cada loop)
       pessoa = entrevistas[0] #posição do nome na lista
       notas = entrevistas[1] #posição das nostas na lista
-      total = []  #lista vazia 
+      total = []  #lista vazia para validação
 
       x = notas.split('_')
       for i in x:
@@ -95,7 +96,9 @@ def busca(resultados, E,T,P,S):
       selecionados.append(sel)
       for i in selecionados:
         if i == []:
-          selecionados.remove(i) #remove os espaços em vazios dos usuários que não foram selecionados
+          selecionados.remove(i) #remove os espaços em vazios dos usuários que
+          # não foram selecionados
     
-    return imprime(selecionados)
+    return pd.DataFrame(selecionados, columns=['Candidato', 'Resultado']) #ou
+    #return imprime(selecionados)
 
