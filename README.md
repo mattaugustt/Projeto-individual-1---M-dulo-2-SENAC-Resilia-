@@ -3,7 +3,7 @@
 **Deu Match!** <br><br>
 **Matheus Augusto de Souza.** <br>
 e-mail para contato: <br>
-mataugusto1999@gmail.com
+mataugusto1999@gmail.com <br>
 
 * Desenvolver um código capaz de ajudar uma startup na verificação de compatibilidade de um candidato com a vaga, de acordo com o desempenho obtido no processo seletivo.
 
