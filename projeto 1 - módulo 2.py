@@ -1,9 +1,8 @@
 #Projeto individual 1 - Módulo 2;
-#SENAC/Resilia.
 #Matheus Augusto de Souza.
 
-
 import pandas as pd
+
 
 #Função que imprime as listas em linhas
 def imprime(lista):
@@ -13,6 +12,10 @@ def imprime(lista):
 
 
 
+resultados = []
+#o resultado no fomato eX_tX_pX_sX vai ser adicionado na lista com 
+#resultados
+
 #Função que adiciona as notas do entrevistado e armazena em uma lista.
 def compat():
     """Função que recebe as notas do usuário nas etapas do processo seletivo e 
@@ -21,11 +24,8 @@ def compat():
     #é substituído pela avaliação da pessoa em uma das etapas do 
     #processo.
     #onde lista está no formato : [entrevista, testeTeo, testePra, softSkills]
-    resultados = []
-    #o resultado no fomato eX_tX_pX_sX vai ser adicionado na lista com 
-    #resultados
     cont = 'sim'
-    while cont == 'sim' or (cont == 'Sim') or (cont == 'SIM') or (cont == 's'):
+    while (cont == 'sim') or (cont == 'Sim') or (cont == 'SIM') or (cont == 's'):
       print('*'*50)
       nome = input('Diga qual o nome do entrevistado:\n')
       print('\n','*'*50) 
@@ -45,8 +45,7 @@ def compat():
       print('*'*50,)
       cont = input('Deseja continuar?\n(digite sim ou não)\n')
       print('*'*50,'\n')
-    print(resultados)
-    
+
     return pd.DataFrame(resultados, columns=['Candidato', 'Resultado'])
     # Podemos usar a função: pd.DataFrame para imprimi uma tabela com as colunas 
     # Candidato e Resultado (após importar a biblioteca pandas)
@@ -57,7 +56,7 @@ def compat():
 
 
 #Função que busca o entrevistado pelas notas minimas.
-def busca(resultados, E,T,P,S):
+def busca(E,T,P,S):
     '''Função que recebe a lista de resultados e as notas minimas de cada parte 
     do processo seletivo e retorna uma lista com os usuários que correspondem as 
     exigencias. list, int, int, int, int -> '''
@@ -102,5 +101,5 @@ def busca(resultados, E,T,P,S):
     return pd.DataFrame(selecionados, columns=['Candidato', 'Notas']) #ou
     #return imprime(selecionados)
 
-#teste:
-#busca([['Matheus', 'e10_t10_p10_s7'], ['Luiz', 'e10_t9_p8_s7'], ['Larissa', 'e9_t8_p7_s6'], ['Barbara', 'e0_t0_p0_s0'], ['Bia', 'e8_t8_p9_s10']], 8,7,8,7)
+#testes:
+#busca(8,7,8,7)
