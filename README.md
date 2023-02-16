@@ -7,7 +7,7 @@ mataugusto1999@gmail.com <br>
 
 * Desenvolver um código capaz de ajudar uma startup na verificação de compatibilidade de um candidato com a vaga, de acordo com o desempenho obtido no processo seletivo.
 
-- **Propostas do projeto:** <br>
+- ***Propostas do projeto:*** <br>
 1°) Criar uma função que devolve/retorna uma string do tipo: 'eX_tX_pX_sX', onde cada X é substituído pela nota obtida pela pessoa em cada uma das etapas do processo - entrevista, teste teórico, teste prático e avaliação de soft skills. <br>
 2°) Criar uma função que faça a busca dos usuários, com as notas mínimas (de 'e', 't', 'p' e 's') dadas como entrada na função, e retorne uma listagem com os entrevistados que possuem notas maior ou igual às dadas na busca.
 
